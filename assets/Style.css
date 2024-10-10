@@ -1,0 +1,330 @@
+/* color variablas */
+:root {
+    --lightestgray: #c2c4c5;
+    --lightgray: #686D76;
+    --darkgray: #373A40;
+    --green: #DC5F00;
+    --white: #EEEEEE;
+}
+
+
+/* Setting a standard margin, padding and box sizing to border box */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Giving the body and html element 100dvh */
+body, html {
+    height: 100dvh;
+}
+
+
+/* Header section */
+header {
+    display: flex;
+    background-color: var(--lightgray);
+    justify-content: left;
+    height: 79px;
+    background-image: url('favicon.png');
+    background-repeat: no-repeat;
+    background-size: 60px;
+    background-position: 40px;
+    background-position-y: center;
+    position: relative;
+}
+
+header .butt {
+    display: flex;
+}
+
+.btn {
+    border: none;
+    height: 79px;
+    text-align: center;
+    background-color: transparent;
+    color: var(--white);
+    width: 130px;
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
+.active {
+    background-color: var(--darkgray);
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.btn:not(.active):hover {
+    color: var(--green);
+    text-shadow: 0px 0px 5px var(--green);
+}
+
+.pageName {
+    color: var(--white);
+    border: none;
+    background-color: transparent;
+    font-size: 1.5em;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.pageName:hover {
+    color: var(--green);
+}
+
+.tagline {
+    color: var(--white);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+/* Main menu section. Main menu is currently set to display: none; in the jsx file */
+.main_menu {
+    background-color: green;
+    height: calc(100dvh - 79px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.p_main_menu {
+    color: black;
+    font-size: larger;
+}
+
+
+/* Testing menu section. Testing menu is currently set to display: none; in the jsx file */
+.testing {
+    background-color: yellow;
+    height: calc(100dvh - 79px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.p_testing {
+    color: black;
+    font-size: larger;
+}
+
+
+/* The Diseases section */
+
+/* The screen size itself */
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--white);
+    height: calc(100dvh - 79px);
+}
+
+
+/* The box the map is in */
+.map {
+    background-color: var(--lightestgray);
+    border-radius: 10px;
+    height: 680px;
+    width: 1030px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: var(--lightgray), solid, 5px;
+    box-shadow:
+  3.8px 3.8px 4.8px rgba(0, 0, 0, 0.07),
+  10.6px 10.6px 13.3px rgba(0, 0, 0, 0.1),
+  25.6px 25.6px 32px rgba(0, 0, 0, 0.13),
+  85px 85px 106px rgba(0, 0, 0, 0.2);
+}
+
+/* The styling for the map */
+svg path {
+    fill: var(--lightgray);
+    stroke: #eee;
+    stroke-width: .25;
+}
+
+svg path:hover{
+    fill: var(--green);
+    transition: 0.6s;
+    cursor: pointer;
+}
+
+.highlight {
+    fill: var(--green);
+    outline: none;
+}
+
+/* The box for the graph and the search bar */
+.information {
+    width: 500px;
+    height: 680px;
+    background-color: var(--lightestgray);
+    border-radius: 10px;
+    border: var(--lightgray), solid, 5px;
+    box-shadow:
+  3.8px 3.8px 4.8px rgba(0, 0, 0, 0.07),
+  10.6px 10.6px 13.3px rgba(0, 0, 0, 0.1),
+  25.6px 25.6px 32px rgba(0, 0, 0, 0.13),
+  85px 85px 106px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* Styling for the search box */
+.search-box {
+    width: 400px;
+    background: #fff;
+    margin: 15px auto 0;
+    border-radius: 5px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+#input-box {
+    flex: 1;
+    height: 50px;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.magni-button {
+    background: transparent;
+    border: 0;
+    outline: 0; 
+}
+
+.magni-button .fa-solid {
+    width: 25px;
+    color: #555;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+::placeholder {
+    color: #555;
+}
+
+/* The box that pops upp when you focus on the search box */
+.result-box {
+    max-height: 250px;
+    overflow-y: scroll;
+    background: var(--lightestgray);
+    width: 400px;
+    border: var(--lightgray), solid, 3px;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.result-box::-webkit-scrollbar {
+    width: 15px;
+}
+
+.result-box::-webkit-scrollbar-track {
+    display: none;
+}
+
+.result-box::-webkit-scrollbar-thumb {
+    background: var(--darkgray);
+    border-radius: 10px;
+}
+
+.result-box ul{
+    border-top: 1px solid #999;
+    padding: 15px 10px;
+}
+
+.result-box ul li {
+    list-style: none;
+    border-radius: 3px;
+    padding: 15px 10px;
+    cursor: pointer;
+}
+
+.result-box ul li:hover {
+    background: #e9f3ff;
+}
+
+
+/* The box the graph pops up in */
+.info_graf {
+    height: 300px;
+    width: 400px;
+    border: var(--lightgray), solid, 3px;
+    border-radius: 7px;
+    position: absolute;
+    left: 50%;
+    bottom: 15px;
+    transform: translateX(-50%);
+}
+
+/* Styling for the paraghraphs */
+.p_source {
+    font-size: small;
+    color: var(--lightgray);
+    padding-left: 13.5px;
+}
+
+.p_source_text {
+    font-size: 10px;
+    color: var(--lightgray);
+    text-align: center;
+}
+
+.before_graph_text {
+    color: var(--darkgray);
+    text-align: center;
+    font-size: 0.869rem;
+    padding: 5px;
+}
+
+/* World Graph */
+.worldGrafBox {
+    height: 250px;
+    width: 400px;
+    border: var(--lightgray), solid, 3px;
+    border-radius: 7px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Making the site responsive to screen size. Add more to it if you want to make it responsive to every screen size */
+@media (max-width: 1432px) {
+    .map {
+        display: none;
+    }
+
+    .tagline {
+        display: none;
+    }
+
+    .pageName {
+        color: var(--white);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
